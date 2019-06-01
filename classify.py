@@ -14,9 +14,13 @@ DURATION = 20
 
 
 for folder in os.listdir("dataset/"):
+
+    if(folder == ".DS_Store"):
+        continue
+
     for filename in os.listdir("dataset/"+folder):
 
-        if(filename == ".DS_Store"):
+        if (filename[-3:] != "mp3"):
             continue
 
         y, sr = librosa.load("dataset/" + folder + "/" +
